@@ -2,22 +2,26 @@ Market News Coverage Across Bull and Bear Market Conditions
 S&P 500 News Coverage Analysis (Python / MediaCloud)
 Project Overview
 
-This project examines whether large daily declines in the S&P 500 receive more media coverage than large daily gains, using:
+This project analyses whether large daily declines in the S&P 500 receive more media coverage than large daily gains.
 
-MediaCloud daily news article counts
+The analysis combines:
 
-S&P 500 (^GSPC) daily price data from Yahoo Finance
+Daily S&P 500 (^GSPC) price data from Yahoo Finance
 
-The analysis tests a widely held assumption in financial commentary:
+Daily financial news article counts from MediaCloud
+
+A common assumption in financial commentary is tested:
 
 “Bad market days attract more news coverage than good market days.”
 
+Rather than relying on anecdotal evidence, this project evaluates that claim using market data and large-scale news coverage statistics.
+
 Research Question
 
-Do large negative market moves generate more news coverage than similarly large positive moves?
+Do large negative market moves generate more media coverage than similarly large positive moves?
 
 Data Sources
-1. Market Data
+Market Data
 
 S&P 500 (^GSPC) daily prices
 
@@ -25,7 +29,7 @@ Source: Yahoo Finance (via yfinance)
 
 Daily return defined as open-to-close percentage change
 
-2. News Data
+News Data
 
 MediaCloud daily article counts
 
@@ -56,11 +60,11 @@ yfinance
 Methodology
 1. Data Preparation
 
-Parsed and aligned dates across datasets
+Parsed and aligned dates across market and news datasets
 
 Cleaned MediaCloud output to retain daily article counts
 
-Calculated daily S&P 500 returns:
+Calculated daily S&P 500 returns using:
 
 Return
 =
@@ -80,19 +84,19 @@ Close−Open
 
 Compared article counts on the 20 largest gain days and 20 largest loss days
 
-Observed strong sensitivity to outliers, motivating a more robust comparison framework
+Results showed strong sensitivity to outliers, motivating a more robust comparison approach
 
 3. Like-for-Like Threshold Analysis
 
-To compare market moves of similar magnitude, days were classified using symmetric thresholds:
+To compare market moves of similar magnitude, trading days were classified using symmetric thresholds:
 
 Large Loss: ≤ −3%
 
 Large Gain: ≥ +3%
 
-Key metrics:
+Key metrics evaluated:
 
-Number of days
+Number of qualifying days
 
 Mean article count
 
@@ -102,7 +106,7 @@ The analysis was repeated using a ±2.5% threshold to increase sample size and t
 
 4. Lag Analysis
 
-To examine whether media attention peaks after large market declines, article volumes were analysed:
+To assess whether media attention peaks after large market declines, article volumes were analysed across multiple horizons:
 
 Same day
 
@@ -114,19 +118,19 @@ Same day
 
 Key Findings
 
-Both large gains and large losses received substantially more coverage than normal trading days
+Both large gains and large losses attracted substantially more news coverage than typical trading days
 
-Contrary to the initial hypothesis, large positive market moves often attracted equal or greater coverage than large negative moves
+Contrary to the initial hypothesis, large positive market moves often received equal or greater coverage than large negative moves
 
-News coverage peaked on the same day as large losses and declined in subsequent days
+News coverage peaked on the same day as large market losses and declined in subsequent days
 
-Results were consistent across threshold definitions
+Results were consistent across different threshold definitions
 
 Interpretation
 
 These findings suggest that media coverage is driven more by market extremity and narrative significance than by negativity alone.
 
-Large, unusual moves — regardless of direction — appear to attract attention.
+Large and unusual market moves — regardless of direction — appear to attract disproportionate media attention.
 
 Limitations
 
@@ -140,15 +144,15 @@ Daily aggregation obscures intraday timing effects
 
 Follow-Up & Validation (SQL Project)
 
-To validate that these findings were not specific to MediaCloud, the analysis was replicated using SQL and an independent dataset:
+To ensure these results were not specific to MediaCloud or Python-based processing, the analysis was replicated using SQL and an independent dataset:
 
 GDELT global news database
 
 Analysis performed entirely in SQLite
 
-Same market thresholds, classification logic, and aggregation methods
+Identical market thresholds, classification logic, and aggregation methods
 
 🔗 Related Project:
-[S&P 500 News Coverage Asymmetry — SQL / GDELT]: https://github.com/Tmax95644/Market-Moves-Media-Coverage-SQL-Replication-Using-GDELT
+S&P 500 News Coverage Asymmetry — SQL / GDELT
 
-The SQL replication produced directionally consistent results, strengthening confidence in the conclusions.
+The SQL-based replication produced directionally consistent results, strengthening confidence in the conclusions.
