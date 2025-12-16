@@ -1,14 +1,14 @@
 Do Markets Get More News Coverage on Big Down Days?
-Python / Pandas Analysis (MediaCloud)
+S&P 500 News Coverage Analysis (Python / MediaCloud)
 Project Overview
 
-This project investigates whether large daily declines in the S&P 500 receive more media coverage than large daily gains, using:
+This project examines whether large daily declines in the S&P 500 receive more media coverage than large daily gains, using:
 
 MediaCloud daily news article counts
 
 S&P 500 (^GSPC) daily price data from Yahoo Finance
 
-The analysis tests a common assumption in financial commentary:
+The analysis tests a widely held assumption in financial commentary:
 
 “Bad market days attract more news coverage than good market days.”
 
@@ -39,7 +39,7 @@ Query phrases:
 
 “share market”
 
-Raw data files are not included due to size and licensing constraints.
+Raw MediaCloud data files are not included due to size and licensing constraints.
 
 Tools & Libraries
 
@@ -58,7 +58,7 @@ Methodology
 
 Parsed and aligned dates across datasets
 
-Cleaned MediaCloud output to retain article counts
+Cleaned MediaCloud output to retain daily article counts
 
 Calculated daily S&P 500 returns:
 
@@ -80,9 +80,7 @@ Close−Open
 
 Compared article counts on the 20 largest gain days and 20 largest loss days
 
-Observed that results were sensitive to extreme outliers
-
-This motivated a more robust approach.
+Observed strong sensitivity to outliers, motivating a more robust comparison framework
 
 3. Like-for-Like Threshold Analysis
 
@@ -104,9 +102,7 @@ The analysis was repeated using a ±2.5% threshold to increase sample size and t
 
 4. Lag Analysis
 
-To examine whether news coverage peaks after large market declines:
-
-Article volumes were analysed on:
+To examine whether media attention peaks after large market declines, article volumes were analysed:
 
 Same day
 
@@ -118,17 +114,19 @@ Same day
 
 Key Findings
 
-Both large gains and large losses received substantially more news coverage than normal trading days
+Both large gains and large losses received substantially more coverage than normal trading days
 
 Contrary to the initial hypothesis, large positive market moves often attracted equal or greater coverage than large negative moves
 
-News coverage peaked on the same day as large losses and declined thereafter
+News coverage peaked on the same day as large losses and declined in subsequent days
 
-Results were consistent across different threshold definitions
+Results were consistent across threshold definitions
 
 Interpretation
 
-The findings suggest that media coverage is driven more by market extremity and narrative significance than by negativity alone.
+These findings suggest that media coverage is driven more by market extremity and narrative significance than by negativity alone.
+
+Large, unusual moves — regardless of direction — appear to attract attention.
 
 Limitations
 
@@ -142,7 +140,7 @@ Daily aggregation obscures intraday timing effects
 
 Follow-Up & Validation (SQL Project)
 
-To validate that these findings were not specific to MediaCloud, the analysis was replicated using SQL and a second, independent dataset:
+To validate that these findings were not specific to MediaCloud, the analysis was replicated using SQL and an independent dataset:
 
 GDELT global news database
 
@@ -150,7 +148,7 @@ Analysis performed entirely in SQLite
 
 Same market thresholds, classification logic, and aggregation methods
 
-The SQL replication project can be found here:
-Investment News & Market Moves — SQL / GDELT
+🔗 Related Project:
+S&P 500 News Coverage Asymmetry — SQL / GDELT
 
-The SQL-based results were directionally consistent with the Python analysis, strengthening confidence in the conclusions.
+The SQL replication produced directionally consistent results, strengthening confidence in the conclusions.
