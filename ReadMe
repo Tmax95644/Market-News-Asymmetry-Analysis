@@ -149,6 +149,6 @@ Analysis performed entirely in SQLite
 Same market thresholds, classification logic, and aggregation methods
 
 🔗 Related Project:
-S&P 500 News Coverage Asymmetry — SQL / GDELT
+[S&P 500 News Coverage Asymmetry — SQL / GDELT]: https://github.com/Tmax95644/Market-Moves-Media-Coverage-SQL-Replication-Using-GDELT
 
 The SQL replication produced directionally consistent results, strengthening confidence in the conclusions.
