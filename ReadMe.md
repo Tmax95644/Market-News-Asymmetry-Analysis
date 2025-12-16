@@ -1,4 +1,4 @@
-Do Markets Get More News Coverage on Big Down Days?
+Market News Coverage Across Bull and Bear Market Conditions
 S&P 500 News Coverage Analysis (Python / MediaCloud)
 Project Overview
 
