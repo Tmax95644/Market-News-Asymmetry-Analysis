@@ -62,11 +62,7 @@ Rather than relying on anecdotal evidence, this project evaluates that claim usi
 - Cleaned MediaCloud output to retain daily article counts  
 - Calculated daily S&P 500 returns using:
 
-\[
-\text{Return} = \frac{\text{Close} - \text{Open}}{\text{Open}} \times 100
-\]
 
----
 
 ### 2. Exploratory Analysis
 - Compared article counts on the **20 largest gain days** and **20 largest loss days**
